@@ -12,6 +12,20 @@ gpu = pd.read_csv('GPU_ranks.csv')
 gpu = gpu.drop(columns=['Unnamed: 5', 'Unnamed: 6'])
 ########New Code added 8-16-2021
 
+laptops['OpSys'].value_counts()
+
+#66 values have 'No OS' for it's operating system. We checked some of the laptop models that had 'No OS' specified, and from our research it seemed like a majority of these laptops did not actually come with an operating system installed. For example, when shopping for a Lenovo Thinkpad the user can decide whether they want to have Windows 10 or Chrome OS installed. Therefore, 'No OS' was a customization feature and we decided to keep this operating system category.
+
+#For Linux OS, only some computers come pre-installed with Linux. Others with Linux as their listed OS are only Linux compatible. Therefore, we searched the product name to see if it had 'Linux' in it. If it did, then we kept Linux as the operating system. If it didn't, we converted it to Windows 10.
+laptops['OpSys'] = ['Windows 10' if laptops['OpSys'].iloc[x] == 'Linux' and 'Linux' not in laptops['Product'].iloc[x] else laptops['OpSys'].iloc[x] for x in range(len(laptops['OpSys']))]
+laptops['OpSys'].value_counts()
+
+#Creating dummy variables for OS systems.
+df = pd.get_dummies(laptops['OpSys'])
+laptops = laptops.drop('OpSys',axis=1)
+laptops = pd.concat([laptops, df], axis=1, join='inner')
+laptops.head()
+
 gpu = gpu[(gpu['Videocard Name'] != 'Videocard Name')]
 gpu.dropna(subset=['Videocard Name'], inplace = True)
 
