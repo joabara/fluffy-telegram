@@ -26,6 +26,38 @@ laptops = laptops.drop('OpSys',axis=1)
 laptops = pd.concat([laptops, df], axis=1, join='inner')
 laptops.head()
 
+#Split memory into two features: 'Memory': Memory Capacity
+#                                'SSD'/'HDD'/'Hybrid': Type of memory. SSD or HDD will be 0 if Hybrid=1
+
+laptops['Memory'] = [(laptops['Memory'].iloc[x]).replace(' Flash Storage',' SSD') for x in range(len(laptops['Memory']))]
+laptops['Hybrid'] = [1 if 'Hybrid' in laptops['Memory'].iloc[x] or '+' in laptops['Memory'].iloc[x] else 0 for x in range(len(laptops['Memory']))]
+laptops['SSD'] = [1 if 'SSD' in laptops['Memory'].iloc[x] and laptops['Hybrid'].iloc[x] != 1 else 0 for x in range(len(laptops['Memory']))]
+laptops['HDD'] = [1 if 'HDD' in laptops['Memory'].iloc[x] and laptops['Hybrid'].iloc[x] != 1 else 0 for x in range(len(laptops['Memory']))]
+
+laptops['Memory1'] = 0
+laptops['Memory2'] = 0
+
+for x in range(len(laptops['Memory'])):
+    if '+' in laptops['Memory'].iloc[x]:
+        split_string = laptops['Memory'].iloc[x].split("+",)
+        if len(split_string) == 1:
+            laptops['Memory1'].iloc[x] = split_string[0]
+            laptops['Memory2'].iloc[x] = 0
+        if len(split_string) == 2:
+            laptops['Memory1'].iloc[x] = split_string[0]
+            laptops['Memory2'].iloc[x] = split_string[1]
+    else:
+        laptops['Memory1'].iloc[x] = laptops['Memory'].iloc[x]
+        laptops['Memory2'].iloc[x] = 0
+        
+laptops['Memory1'] = [pd.to_numeric(str(laptops['Memory1'].iloc[x]).replace('GB','').replace(' ','').replace('1.0TB','1000').replace('1TB','1000').replace('SSD','').replace('HDD',''),errors = 'coerce') for x in range(len(laptops['Memory1']))]
+laptops['Memory2'] = [pd.to_numeric(str(laptops['Memory2'].iloc[x]).replace('GB','').replace(' ','').replace('1.0TB','1000').replace('1TB','1000').replace('SSD','').replace('HDD',''),errors = 'coerce') for x in range(len(laptops['Memory2']))]
+laptops['Memory'] = laptops['Memory1'] + laptops['Memory2']
+laptops = laptops.drop('Memory1',axis=1)
+laptops = laptops.drop('Memory2',axis=1)
+
+#####END LAPTOP MEMORY######
+
 gpu = gpu[(gpu['Videocard Name'] != 'Videocard Name')]
 gpu.dropna(subset=['Videocard Name'], inplace = True)
 
