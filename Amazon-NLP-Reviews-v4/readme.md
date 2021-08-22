@@ -1047,7 +1047,6 @@ def select_best_model_score(df):
     from sklearn.model_selection import train_test_split
     X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.25,random_state=0)
     
-#     models_to_run = [MLPClassifier]
     models_to_run = [LogisticRegression, LinearSVC, MLPClassifier, 
                  DecisionTreeClassifier, RandomForestClassifier, GaussianNB,
                 Perceptron, MLPClassifier, SGDClassifier]
@@ -1061,15 +1060,9 @@ def select_best_model_score(df):
         build = build_models_on_train(df, algo, X_train, X_test, y_train, y_test)
         pred = build.predict(X_test)
         RMSE = np.sqrt(metrics.mean_squared_error(y_test, pred))
-#         print(build)
-#         print("Build model score (Accuracy): " + str(build.score(X_test, y_test)))
-#         print("MAE = {:5.4f}".format(metrics.mean_absolute_error(y_test, pred)))
-#         print("MSE = {:5.4f}".format(metrics.mean_squared_error(y_test, pred)))
-#         print("RMSE = {:5.4f}".format(np.sqrt(metrics.mean_squared_error(y_test, pred))))
-#         print("Accuracy:", metrics.accuracy_score(y_test, pred))
+
 
         if RMSE < max_RMSE:
-#         if metrics.accuracy_score(y_test, pred) > max_score:
             max_score = build.score(X_test, y_test)
             max_build = build
             max_RMSE = RMSE        
