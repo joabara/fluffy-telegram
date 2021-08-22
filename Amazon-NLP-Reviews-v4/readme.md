@@ -1241,7 +1241,7 @@ mk6 = select_best_model_score(t)
 
 It seems that the SGDC models running on truncated SVD data are better at predicting customer rating based on the text found in the review. One of the things it seems to do very well is rate products accurately on overall positive or negative. It classifies the majority of reviews in 1,2 star or 4,5 stars. It does have a little trouble with more nuanced reviews at 3 stars. Three stars can often mean there are some good or bad parts of a review so the model likely gets confused with those nuances.
 
-In conclusion, we would want to export the SGDC models to help laptop / reviewing companies. Since they run on reduced dimensionality, they return better results and in a shorter timeframe as well. In the next steps below I will highlight how we can implement this model into production to drive business value.
+In conclusion, we would want to export the SGDC models for exact predictions and Linear SVC for positive/negative ratings to help laptop / reviewing companies. Since they run on reduced dimensionality, they return better results and in a shorter timeframe as well. In the next steps below I will highlight how we can implement this model into production to drive business value.
 
 ## Next Steps & Business Implementation
 
