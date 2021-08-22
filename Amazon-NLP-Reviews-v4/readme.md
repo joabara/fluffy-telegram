@@ -1093,7 +1093,7 @@ We are going to build two models for 1) exact star rating and 2) if ratings are 
 
 ### Predicting Star Ratings
 
-
+#### Original Word Data
 ```python
 mk1 = select_best_model_score(words_df)
 ```
@@ -1114,7 +1114,7 @@ mk1 = select_best_model_score(words_df)
     
 
 
-
+#### Truncated SVD Data
 ```python
 mk2 = select_best_model_score(t)
 ```
@@ -1137,7 +1137,7 @@ mk2 = select_best_model_score(t)
 
 ### Predicting a Positive Rating (3+ Stars)
 
-
+#### Original Word Data
 ```python
 t['Rating'] = t['Rating'].apply(lambda x: 1 if x > 2 else 0)
 words_df['Rating'] = words_df['Rating'].apply(lambda x: 1 if x > 2 else 0)
@@ -1164,7 +1164,7 @@ mk3 = select_best_model_score(words_df)
     
 
 
-
+#### Truncated SVD Data
 ```python
 mk4 = select_best_model_score(t)
 ```
@@ -1187,7 +1187,7 @@ mk4 = select_best_model_score(t)
 
 ### Predicting a Negative Review (1-Star)
 
-
+#### Original Word Data
 ```python
 words_df['Rating'] = reviews['Rating']
 t['Rating'] = reviews['Rating']
@@ -1216,7 +1216,7 @@ mk5 = select_best_model_score(words_df)
     
 
 
-
+#### Truncated SVD Data
 ```python
 mk6 = select_best_model_score(t)
 ```
