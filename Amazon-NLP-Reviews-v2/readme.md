@@ -593,7 +593,6 @@ Through this filtering we've removed almost 2K words. This will help reduce dime
 
 
 ```python
-# Apply fit_transform to csr matrix
 review_vector = scp.sparse.csr_matrix(words_df.values)
 review_vector.shape
 ```
