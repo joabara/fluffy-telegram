@@ -8,7 +8,7 @@
 
 ## Executive Summary
 
-* We can predict exactly how many stars a customer will rate a laptop based on their review text with an accuracy of 73%
+* We can predict exactly how many stars a customer will rate a laptop based on their review text with an accuracy of 74%
 
 * We can predict whether or not a product will have a positive rating (3+ stars) with an accuracy of 90%
 * We can predict whether or not a product will have a negative rating (1-star) with an accuracy of 91%
