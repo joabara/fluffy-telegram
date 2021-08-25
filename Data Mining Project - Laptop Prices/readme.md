@@ -27,7 +27,19 @@ laptops.head()
 
 
 <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -147,7 +159,19 @@ gpu.head()
 
 
 <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -218,7 +242,19 @@ cpu.head(50)
 
 
 <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -900,7 +936,19 @@ laptops.head()
 
 
 <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1078,7 +1126,19 @@ gpu.head()
 
 
 <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1178,7 +1238,19 @@ gpu.head()
 
 
 <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1267,7 +1339,19 @@ cpu.head()
 
 
 <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1395,7 +1479,19 @@ cpu.head()
 
 
 <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1489,7 +1585,19 @@ cpu.head()
 
 
 <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1573,7 +1681,19 @@ laptops.head()
 
 
 <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1817,7 +1937,19 @@ laptops.head()
 
 
 <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -2180,7 +2312,7 @@ from nose.tools import assert_equal, assert_is_instance, assert_true, assert_is_
 from numpy.testing import assert_array_equal, assert_array_almost_equal, assert_almost_equal
 ```
 
-## Auto ML
+## Regression Model Selection
 
 
 ```python
@@ -2282,10 +2414,6 @@ def select_best_model_score(df):
     from sklearn.model_selection import train_test_split
     X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.25,random_state=0)
     
-#     models_to_run = [LogisticRegression, LinearSVC, MLPRegressor, 
-#                  DecisionTreeRegressor, RandomForestRegressor, GaussianNB,
-#                 Perceptron, MLPRegressor, SGDRegressor]
-    
     models_to_run = [LogisticRegression, MLPRegressor, 
                  DecisionTreeRegressor, RandomForestRegressor, MLPRegressor, SGDRegressor]
     
@@ -2333,10 +2461,10 @@ mk1 = select_best_model_score(laptops)
     
     Best build model is: 
     RandomForestRegressor()
-    Build model score (Accuracy): 0.7786355959890501
-    MAE = 256.8714
-    MSE = 165164.5931
-    RMSE = 406.4045
+    Build model score (Accuracy): 0.7772466529059526
+    MAE = 254.5213
+    MSE = 166200.9124
+    RMSE = 407.6775
 
 
 
@@ -2356,7 +2484,19 @@ laptops.head()
 
 
 <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -2668,10 +2808,10 @@ plt.xlabel('Association')
 plt.ylabel('WCSS')
 plt.show() 
 
-kmeans_iris = KMeans(n_clusters = 3, random_state = 55).fit(laptops)
+kmeans_laptops = KMeans(n_clusters = 3, random_state = 55).fit(laptops)
 
-y_kmeans = kmeans_iris.predict(laptops)
-labels = kmeans_iris.labels_
+y_kmeans = kmeans_laptops.predict(laptops)
+labels = kmeans_laptops.labels_
 ```
 
 
@@ -2702,7 +2842,7 @@ plt.ylabel("Price in $")
 
 
 ```python
-df = pd.DataFrame(kmeans_iris.labels_,columns = ['KMeans Label'])
+df = pd.DataFrame(kmeans_laptops.labels_,columns = ['KMeans Label'])
 df1 = pd.DataFrame(laptop_company, columns = ['Company'])
 df2 = pd.DataFrame(laptop_product, columns = ['Product'])
 ```
@@ -2723,7 +2863,19 @@ laptops2
 
 
 <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -3361,17 +3513,17 @@ laptops2[laptops2['KMeans Label'] == 0]['Product'].value_counts()
 
 
 
-    Alienware 17         15
-    ThinkPad X1          11
-    XPS 13               11
-    XPS 15                9
-    MacBook Pro           7
-                         ..
-    Portege X30-D-10K     1
-    ThinkPad T460s        1
-    Inspiron 7577         1
-    Tecra Z50-C-140       1
-    GS63VR 7RG            1
+    Alienware 17                         15
+    ThinkPad X1                          11
+    XPS 13                               11
+    XPS 15                                9
+    MacBook Pro                           7
+                                         ..
+    Precision 7520                        1
+    GE73VR 7RF                            1
+    Q534UX-BHI7T19 (i7-7500U/16GB/2TB     1
+    Notebook Odyssey                      1
+    ThinkPad X270                         1
     Name: Product, Length: 142, dtype: int64
 
 
@@ -3385,7 +3537,19 @@ laptops2[laptops2['KMeans Label'] == 0][['Product','Price_dollars','CPU_Rank']].
 
 
 <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -3505,17 +3669,17 @@ laptops2[laptops2['KMeans Label'] == 1]['Product'].value_counts()
 
 
 
-    Legion Y520-15IKBN                        19
-    XPS 13                                    19
-    Inspiron 5570                             18
-    Inspiron 3567                             15
-    Inspiron 5567                             13
-                                              ..
-    Pavilion X360                              1
-    EliteBook 1030                             1
-    X542UQ-GO005 (i5-7200U/8GB/1TB/GeForce     1
-    Flex 5                                     1
-    X751NV-TY001 (N4200/4GB/1TB/GeForce        1
+    XPS 13                                       19
+    Legion Y520-15IKBN                           19
+    Inspiron 5570                                18
+    Inspiron 3567                                15
+    Inspiron 5567                                13
+                                                 ..
+    Pavilion x360                                 1
+    GP62M 7REX                                    1
+    ZenBook UX530UQ-PRO                           1
+    FX502VM-DM105T (i7-6700HQ/8GB/1TB/GeForce     1
+    Aspire A715-71G                               1
     Name: Product, Length: 355, dtype: int64
 
 
@@ -3529,7 +3693,19 @@ laptops2[laptops2['KMeans Label'] == 1][['Product','Price_dollars','CPU_Rank']].
 
 
 <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -3649,17 +3825,17 @@ laptops2[laptops2['KMeans Label'] == 2]['Product'].value_counts()
 
 
 
-    Inspiron 3567                              14
-    250 G6                                     13
-    Vostro 3568                                10
-    Aspire 3                                   10
-    Inspiron 3552                               9
-                                               ..
-    Thinkpad 13                                 1
-    VivoBook E201NA                             1
-    Inspiron 7773                               1
-    X705UV-BX074T (i3-6006U/4GB/1TB/GeForce     1
-    V110-15IAP (N3350/4GB/1TB/No                1
+    Inspiron 3567                            14
+    250 G6                                   13
+    Aspire 3                                 10
+    Vostro 3568                              10
+    Inspiron 3552                             9
+                                             ..
+    X505BP-BR019T (A9-9420/4GB/1TB/Radeon     1
+    17-BS092ND (i3-6006U/8GB/256GB/W10)       1
+    15-AY023na (N3710/8GB/2TB/W10)            1
+    Vivobook Max                              1
+    V110-15ISK (i3-6006U/4GB/500GB/W10)       1
     Name: Product, Length: 195, dtype: int64
 
 
@@ -3673,7 +3849,19 @@ laptops2[laptops2['KMeans Label'] == 2][['Product','Price_dollars','CPU_Rank']].
 
 
 <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
