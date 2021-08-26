@@ -26,4 +26,4 @@ CPU Ranks: https://www.cpubenchmark.net/cpu_list.php
 
 GPU Ranks: https://www.videocardbenchmark.net/
 
-Amazon Api for Product and Review Data: https://rapidapi.com/logicbuilder/api/amazon-product-reviews-keywords 
+Amazon Review Data API: https://rapidapi.com/logicbuilder/api/amazon-product-reviews-keywords 
