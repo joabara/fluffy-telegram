@@ -19,4 +19,11 @@
  
 * Fluffy Telegram Inc also aims to provide manufacturers with automated insights so that they can predict how a laptop might sell by submitting their consumer insights research into our NLP model.
  
+### Data Sources
+Laptops Dataset: https://www.kaggle.com/ionaskel/laptop-prices
 
+CPU Ranks: https://www.cpubenchmark.net/cpu_list.php
+
+GPU Ranks: https://www.videocardbenchmark.net/
+
+Amazon Api for Product and Review Data: https://rapidapi.com/logicbuilder/api/amazon-product-reviews-keywords 
